@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT - AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <div class="brand">
+                <svg class="gpt-logo" viewBox="0 0 40 40" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="currentColor" stroke-width="2.5"
+                       stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 5 L30 11 L30 23 L20 29 L10 23 L10 11 Z"/>
+                        <path d="M20 5 L20 17 L30 23"/>
+                        <path d="M30 11 L20 17 L10 11"/>
+                        <path d="M10 23 L20 17 L20 29"/>
+                        <path d="M20 29 L20 35"/>
+                        <path d="M10 11 L5 14"/>
+                        <path d="M30 11 L35 14"/>
+                    </g>
+                </svg>
+                <span>ChatGPT</span>
+            </div>
+
+            <button class="icon-btn close-sidebar" id="closeSidebar"
+                    aria-label="Close sidebar">✕</button>
+        </div>
+
+        <button class="new-chat" id="newChat">
+            <span class="plus">＋</span>
+            <span>New chat</span>
+            <span class="shortcut">⌘ K</span>
+        </button>
+
+        <div class="sidebar-label">YOUR CHATS</div>
+
+        <div class="chat-history" id="chatHistory">
+            <button class="history-item active">💬 <span>New conversation</span></button>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="profile">
+                <div class="avatar">VK</div>
+                <div class="profile-info">
+                    <strong>Vansh Kansal</strong>
+                    <small>Free plan</small>
+                </div>
+                <span class="dots">•••</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main chat area -->
+    <main class="main">
+        <header class="topbar">
+            <button class="icon-btn menu-btn" id="menuBtn"
+                    aria-label="Open sidebar">☰</button>
+
+            <button class="model-selector">
+                ChatGPT <span class="model-tag">Demo</span>
+                <span class="down-arrow">⌄</span>
+            </button>
+
+            <button class="share-btn" id="shareBtn">↗ Share</button>
+        </header>
+
+        <section class="chat-area" id="chatArea">
+            <!-- Welcome screen -->
+            <div class="welcome" id="welcome">
+                <div class="welcome-logo">
+                    <svg viewBox="0 0 40 40" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="currentColor" stroke-width="2.5"
+                           stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 5 L30 11 L30 23 L20 29 L10 23 L10 11 Z"/>
+                            <path d="M20 5 L20 17 L30 23"/>
+                            <path d="M30 11 L20 17 L10 11"/>
+                            <path d="M10 23 L20 17 L20 29"/>
+                            <path d="M20 29 L20 35"/>
+                            <path d="M10 11 L5 14"/>
+                            <path d="M30 11 L35 14"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <h1>What can I help with?</h1>
+                <p>Ask anything. Explore ideas. Learn something new.</p>
+
+                <div class="suggestions">
+                    <button class="suggestion" data-prompt="Explain C++ loops with examples">
+                        <span>⌘</span> Learn C++ basics
+                    </button>
+                    <button class="suggestion" data-prompt="Give me a creative website project idea">
+                        <span>✳</span> Build a website
+                    </button>
+                    <button class="suggestion" data-prompt="Help me make a productive study plan">
+                        <span>◷</span> Plan my studies
+                    </button>
+                    <button class="suggestion" data-prompt="Tell me something interesting about space">
+                        <span>✧</span> Explore something new
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages appear here -->
+            <div class="messages" id="messages"></div>
+        </section>
+
+        <!-- Message input -->
+        <footer class="composer-area">
+            <form class="composer" id="chatForm">
+                <textarea
+                    id="userInput"
+                    placeholder="Message ChatGPT..."
+                    rows="1"
+                    aria-label="Type your message"
+                ></textarea>
+
+                <div class="composer-bottom">
+                    <div class="composer-tools">
+                        <button type="button" class="tool-btn"
+                                id="attachBtn" title="Demo attachment">＋</button>
+                        <span class="tool-label">Ask anything</span>
+                    </div>
+
+                    <div class="composer-actions">
+                        <button type="button" class="tool-btn"
+                                id="voiceBtn" title="Voice demo">♩</button>
+                        <button type="submit" class="send-btn"
+                                id="sendBtn" aria-label="Send message">↑</button>
+                    </div>
+                </div>
+            </form>
+
+            <p class="disclaimer">
+                This is a demo interface. Responses are predefined, not AI-generated.
+            </p>
+        </footer>
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
